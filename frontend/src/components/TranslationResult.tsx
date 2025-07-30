@@ -1,33 +1,45 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+`;
 
 const ResultContainer = styled.div`
   background: ${({ theme }) => theme.colors.sandstone};
-  border: 2px solid ${({ theme }) => theme.colors.gold};
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin: 1rem 0;
+  border: 2.5px solid ${({ theme }) => theme.colors.lapis};
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  margin: 1.5rem 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  box-shadow: 0 4px 24px 0 #C9B03733;
+  animation: ${fadeIn} 0.8s cubic-bezier(0.4,0.2,0.2,1);
 `;
 const TranslationText = styled.div`
-  font-size: 1.3rem;
-  color: ${({ theme }) => theme.colors.black};
-  margin-bottom: 1rem;
+  font-size: 1.35rem;
+  color: ${({ theme }) => theme.colors.brown};
+  margin-bottom: 1.2rem;
+  font-family: 'Cormorant Garamond', serif;
 `;
 const AudioButton = styled.button`
-  background: ${({ theme }) => theme.colors.turquoise};
-  color: ${({ theme }) => theme.colors.black};
+  background: ${({ theme }) => theme.colors.gold};
+  color: ${({ theme }) => theme.colors.lapis};
   border: none;
-  border-radius: 8px;
-  padding: 0.5rem 1.2rem;
-  font-size: 1rem;
-  font-family: inherit;
+  border-radius: 10px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 2px 8px 0 #C9B03733;
+  transition: background 0.3s, color 0.3s, box-shadow 0.2s;
   &:hover {
-    background: ${({ theme }) => theme.colors.gold};
-    color: ${({ theme }) => theme.colors.sandstone};
+    background: ${({ theme }) => theme.colors.lapis};
+    color: ${({ theme }) => theme.colors.gold};
+    box-shadow: 0 4px 16px 0 #1A237E55;
   }
 `;
 

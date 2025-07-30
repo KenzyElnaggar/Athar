@@ -5,8 +5,12 @@ declare module 'styled-components' {
     colors: {
       gold: string;
       turquoise: string;
+      lapis: string;
       sandstone: string;
-      black: string;
+      brown: string;
+      red: string;
+      green: string;
+      white: string;
     };
   }
 } 
